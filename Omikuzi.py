@@ -10,7 +10,7 @@ import requests
 
 print("start client")
 
-url = "https://render-fastapi-vjt6.onrender.com/upper"
+
 
 msg = input("message: ")
 
