@@ -4,6 +4,20 @@ from fastapi import FastAPI
 
 import random  # randomライブラリを追加
 
+
+
+import requests
+
+print("start client")
+
+url = "https://https://render-fastapi-vjt6.onrender.com/upper"
+
+msg = input("message: ")
+
+response = requests.post(url, data=msg.encode("ascii"))
+
+print(response.text)
+
 app = FastAPI()
 
 @app.get("/")
