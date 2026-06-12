@@ -5,7 +5,7 @@ from fastapi import FastAPI
 import random  # randomライブラリを追加
 
 app = FastAPI()
-
+host = https://render-fastapi-vjt6.onrender.com
 
 @app.get("/")
 async def root():
