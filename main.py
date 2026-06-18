@@ -61,6 +61,7 @@ def index():
         <body>
             <h1>私のサイトへようこそ！</h1>
             <p>今年、ケロロ軍曹とちいかわの映画が公開されます！</p>
+            <p>楽しみですね！</p>
         </body>
         <header>
             <a>20260618</a>
@@ -72,3 +73,8 @@ def index():
 @app.post("/present")
 async def give_present(present):
     return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
+
+
+@app.post("/original")
+async def original(omikuji: str):
+    return {"response": f"今日の運勢を占いましょう！{omikuji}を引きました！"}
