@@ -5,8 +5,8 @@ from typing import Optional
 
 app = FastAPI()
 
-@app.get("/index")
-def index():
+@app.get("/")
+async def root():
     return HTMLResponse("""
     <html>
         <head>
@@ -17,3 +17,8 @@ def index():
         </body>
     </html>
     """)
+
+
+@app.post("/present")
+async def give_present(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  
