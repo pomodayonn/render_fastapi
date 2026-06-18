@@ -62,6 +62,9 @@ def index():
             <h1>私のサイトへようこそ！</h1>
             <p>今年、ケロロ軍曹とちいかわの映画が公開されます！</p>
         </body>
+        <header>
+            <a>20260618</a>
+        </header>
     </html>
     """
     return HTMLResponse(content=html_content, status_code=200)
