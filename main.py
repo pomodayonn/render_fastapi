@@ -31,3 +31,41 @@ def omikuji():
     ]
 
     return omikuji_list[random.randrange(10)]
+
+from fastapi.responses import HTMLResponse
+
+### コードいろいろ... ###
+
+@app.get("/index")
+def index():
+    html_content = """
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>My HTML Page</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    text-align: center;
+                    padding: 50px;
+                }
+                h1 {
+                    color: #333;
+                }
+                p {
+                    color: #666;
+                }   
+            </style>
+        </head>
+        <body>
+            <h1>私のサイトへようこそ！</h1>
+            <p>今年、ケロロ軍曹とちいかわの映画が公開されます！</p>
+        </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content, status_code=200)
+
+@app.post("/present")
+async def give_present(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
